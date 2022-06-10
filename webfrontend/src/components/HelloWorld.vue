@@ -51,7 +51,13 @@
                 this.post = null;
                 this.loading = true;
 
-                fetch('weatherforecast')
+                fetch('api/battleship')
+                    .then(r => r.json())
+                    .then(json => {
+                        console.log(json);
+                    });
+
+                fetch('api/weatherforecast')
                     .then(r => r.json())
                     .then(json => {
                         this.post = json;
