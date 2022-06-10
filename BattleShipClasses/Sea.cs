@@ -30,6 +30,8 @@ namespace BattleShipClasses
                     Grid[row, column] = Constants.NoShot;
                 }
             }
+
+            InitializeSeaWithShips();
         }
 
         public void InitializeSeaWithShips()

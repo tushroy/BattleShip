@@ -11,20 +11,21 @@ namespace BattleShipClasses
         public int HitCounter = 0;
 
         public int ShotCounter = 0;
-        public string Message { get; set; }
 
         private char[,] Grid;
-        public Player(char[,] grid)
+        private Sea PlayerSea;
+        public Player(Sea playerSea)
         {
-            Grid = grid;
+            PlayerSea = playerSea;
         }
 
-        public void Shoot(int row, int col)
+        public string Shoot(int row, int col)
         {
-            if (Grid[row, col].Equals(Constants.Ship))
+            string message = "";
+            if (PlayerSea.Grid[row, col].Equals(Constants.Ship))
             {
-                Grid[row, col] = Constants.Hit;
-                Message = "Hit!";
+                PlayerSea.Grid[row, col] = Constants.Hit;
+                message = "Hit!";
                 HitCounter += 1;
                 ShotCounter += 1;
 
@@ -40,7 +41,7 @@ namespace BattleShipClasses
 
                         if (s.Positions.Count == 0)
                         {
-                            Message = string.Format("Congratulations! {0} sank", s.Name);
+                            message = string.Format("Congratulations! {0} sank", s.Name);
                         }
                     }
                 }
@@ -48,15 +49,15 @@ namespace BattleShipClasses
             else if (Grid[row, col].Equals(Constants.NoShot))
             {
                 Grid[row, col] = Constants.Miss;
-                Message = "Miss!";
+                message = "Miss!";
                 ShotCounter += 1;
             }
             else
             {
-                Message = "Already shot this!";
+                message = "Already shot this!";
             }
 
-            Console.WriteLine(Message);
+            return message;
         }
     }
 }
