@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using webbackend.Game;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -10,9 +11,15 @@ namespace webbackend.Controllers
     {
         // GET: api/<BattleshipController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public BattleshipDataModel Get()
         {
-            return new string[] { "value1", "value2" };
+            var data = new BattleshipDataModel
+            {
+                BoardData = BattleshipGameWeb.Game.GridDataForWeb(),
+                IsGameEnd = BattleshipGameWeb.Game.isGameEnd(),
+                Message = ""
+            };
+            return data;
         }
 
         // GET api/<BattleshipController>/5

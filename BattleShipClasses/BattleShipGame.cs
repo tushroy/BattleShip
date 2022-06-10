@@ -10,7 +10,7 @@ namespace BattleShipClasses
     {
         private Sea sea;
         private Player player;
-        
+
 
         public BattleShipGame()
         {
@@ -37,7 +37,21 @@ namespace BattleShipClasses
             }
         }
 
+        public List<List<char>> GridDataForWeb()
+        {
+            var list = new List<List<char>>();
+            for (var i = 0; i < sea.Grid.GetLength(1); i++)
+            {
+                var charList = new List<char>();
+                for (var j = 0; j < sea.Grid.GetLength(0); j++)
+                {
+                    charList.Add(sea.Grid[i, j]);
+                }
+                list.Add(charList);
+            }
 
-        
+            return list;
+        }
+
     }
 }
