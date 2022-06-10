@@ -23,28 +23,18 @@ namespace webbackend.Controllers
         }
 
         // GET api/<BattleshipController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{row}/{col}")]
+        public BattleshipDataModel Get(int row, int col)
         {
-            return "value";
-        }
+            var msg = BattleshipGameWeb.Game.Fire(row, col);
 
-        // POST api/<BattleshipController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/<BattleshipController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<BattleshipController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            var data = new BattleshipDataModel
+            {
+                BoardData = BattleshipGameWeb.Game.GridDataForWeb(),
+                IsGameEnd = BattleshipGameWeb.Game.isGameEnd(),
+                Message = msg
+            };
+            return data;
         }
     }
 }

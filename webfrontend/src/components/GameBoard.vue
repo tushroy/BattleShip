@@ -3,23 +3,12 @@
         <div v-if="loading" class="loading">
             Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationvue">https://aka.ms/jspsintegrationvue</a> for more details.
         </div>
-
-        <div v-if="post" class="content">
+        <div v-if="battleShipData" class="content">
             <table>
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Temp. (C)</th>
-                        <th>Temp. (F)</th>
-                        <th>Summary</th>
-                    </tr>
-                </thead>
                 <tbody>
-                    <tr v-for="forecast in post" :key="forecast.date">
-                        <td>{{ forecast.date }}</td>
-                        <td>{{ forecast.temperatureC }}</td>
-                        <td>{{ forecast.temperatureF }}</td>
-                        <td>{{ forecast.summary }}</td>
+                    <tr v-for="(rowData,i) in battleShipData.boardData" :key="i">
+                        <td v-for="(col,j) in rowData" :key="j">
+                        <button>{{col}}</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -48,19 +37,13 @@
         },
         methods: {
             fetchData() {
-                this.post = null;
+                this.battleShipData = null;
                 this.loading = true;
 
                 fetch('api/battleship')
                     .then(r => r.json())
                     .then(json => {
-                        console.log(json);
-                    });
-
-                fetch('api/weatherforecast')
-                    .then(r => r.json())
-                    .then(json => {
-                        this.post = json;
+                        this.battleShipData = json;
                         this.loading = false;
                         return;
                     });
