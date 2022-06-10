@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleShip", "BattleShip\Ba
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleShipClasses", "BattleShipClasses\BattleShipClasses.csproj", "{D114F631-F03B-4120-A9E8-CEE6736DA3B4}"
 EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "webfrontend", "webfrontend\webfrontend.esproj", "{FA043947-7190-45CC-B280-B7E82A24ED6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webbackend", "webbackend\webbackend.csproj", "{D684BADA-3EC6-4AB1-87F1-60A7BA3AB968}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,16 @@ Global
 		{D114F631-F03B-4120-A9E8-CEE6736DA3B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D114F631-F03B-4120-A9E8-CEE6736DA3B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D114F631-F03B-4120-A9E8-CEE6736DA3B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA043947-7190-45CC-B280-B7E82A24ED6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA043947-7190-45CC-B280-B7E82A24ED6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA043947-7190-45CC-B280-B7E82A24ED6C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FA043947-7190-45CC-B280-B7E82A24ED6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA043947-7190-45CC-B280-B7E82A24ED6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA043947-7190-45CC-B280-B7E82A24ED6C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D684BADA-3EC6-4AB1-87F1-60A7BA3AB968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D684BADA-3EC6-4AB1-87F1-60A7BA3AB968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D684BADA-3EC6-4AB1-87F1-60A7BA3AB968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D684BADA-3EC6-4AB1-87F1-60A7BA3AB968}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
