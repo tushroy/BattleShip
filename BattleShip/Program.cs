@@ -29,6 +29,9 @@ namespace BattleShip
                     Console.WriteLine("Invalid Input");
                 }
             }
+
+            Console.WriteLine("Game Over");
+            Console.ReadLine();
         }
     }
 }

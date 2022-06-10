@@ -58,7 +58,6 @@ namespace BattleShipClasses
         {
             var r = RandomGenerator.Next();
             Orientation orientation = (Orientation)(r % 2);
-            //Console.WriteLine(" orientation " + orientation.ToString());
 
             switch (orientation)
             {

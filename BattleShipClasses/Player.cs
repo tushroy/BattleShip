@@ -12,7 +12,6 @@ namespace BattleShipClasses
 
         public int ShotCounter = 0;
 
-        private char[,] Grid;
         private Sea PlayerSea;
         public Player(Sea playerSea)
         {
@@ -46,9 +45,9 @@ namespace BattleShipClasses
                     }
                 }
             }
-            else if (Grid[row, col].Equals(Constants.NoShot))
+            else if (PlayerSea.Grid[row, col].Equals(Constants.NoShot))
             {
-                Grid[row, col] = Constants.Miss;
+                PlayerSea.Grid[row, col] = Constants.Miss;
                 message = "Miss!";
                 ShotCounter += 1;
             }
