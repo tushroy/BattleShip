@@ -18,10 +18,10 @@ namespace BattleShipClasses
             player = new Player(sea);
         }
 
-        public void Fire(int row, int col)
+        public string Fire(int row, int col)
         {
             var shootMsg = player.Shoot(row, col);
-            Console.WriteLine(shootMsg);
+            return shootMsg;
         }
 
         public bool isGameEnd()
@@ -31,12 +31,12 @@ namespace BattleShipClasses
 
         public void ShowGameBoard(bool showShip)
         {
-            //Console.Clear();
             foreach (var line in Helpers.PrepareBoard(sea.Grid, showShip))
             {
                 Console.WriteLine(line);
             }
         }
+
 
         
     }
