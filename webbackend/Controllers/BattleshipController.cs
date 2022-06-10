@@ -36,5 +36,18 @@ namespace webbackend.Controllers
             };
             return data;
         }
+
+        [HttpGet("reset")]
+        public BattleshipDataModel Reset()
+        {
+            BattleshipGameWeb.ResetGame();
+            var data = new BattleshipDataModel
+            {
+                BoardData = BattleshipGameWeb.Game.GridDataForWeb(),
+                IsGameEnd = BattleshipGameWeb.Game.isGameEnd(),
+                Message = ""
+            };
+            return data;
+        }
     }
 }
