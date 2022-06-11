@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace BattleShipClasses
 {
+    /// <summary>
+    /// Gameplay class
+    /// </summary>
     public class BattleShipGame
     {
         private Sea sea;
@@ -28,7 +31,10 @@ namespace BattleShipClasses
         {
             return (sea.TotalHitsRequired == player.HitCounter);
         }
-
+        /// <summary>
+        /// helper function to show grid on console output
+        /// </summary>
+        /// <param name="showShip"></param>
         public void ShowGameBoard(bool showShip)
         {
             foreach (var line in Helpers.PrepareBoard(sea.Grid, showShip))
@@ -37,6 +43,10 @@ namespace BattleShipClasses
             }
         }
 
+        /// <summary>
+        /// helper function to prepare grid data for serializable json/web output
+        /// </summary>
+        /// <returns></returns>
         public List<List<char>> GridDataForWeb()
         {
             var list = new List<List<char>>();

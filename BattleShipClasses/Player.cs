@@ -17,7 +17,12 @@ namespace BattleShipClasses
         {
             PlayerSea = playerSea;
         }
-
+        /// <summary>
+        /// function to shot agrainst a cell in grid
+        /// </summary>
+        /// <param name="row"></param>
+        /// <param name="col"></param>
+        /// <returns></returns>
         public string Shoot(int row, int col)
         {
             string message = "";

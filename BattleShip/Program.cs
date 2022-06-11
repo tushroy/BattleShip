@@ -14,11 +14,11 @@ namespace BattleShip
             var battleShipGame = new BattleShipGame();
 
             battleShipGame.ShowGameBoard(true);
-            while (!battleShipGame.isGameEnd())
+            while (!battleShipGame.isGameEnd()) //game loop
             {
                 int row = -1;
                 int col = -1;
-                string line = Console.ReadLine();
+                string line = Console.ReadLine(); // take user input in format A5
                 if (Helpers.ValidateUserInput(line, out row, out col))
                 {
                     string msg = battleShipGame.Fire(row, col);

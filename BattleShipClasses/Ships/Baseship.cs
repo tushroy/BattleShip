@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace BattleShipClasses.Ships
 {
+    /// <summary>
+    /// Base class for ships
+    /// </summary>
     public abstract class Baseship
     {
         public int TotalSquares { get; set; }

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace BattleShipClasses
 {
+    /// <summary>
+    /// Different constants used in program
+    /// </summary>
     public static class Constants
     {
         public static char[] CharArrRows = new char[] { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J' };
@@ -14,13 +17,27 @@ namespace BattleShipClasses
         public static char Hit = 'X';
         public static char Ship = 'S';
     }
+    /// <summary>
+    /// for generation of orientation of ship in grid
+    /// </summary>
     enum Orientation
     {
         Down,
         Right
     }
+
+    /// <summary>
+    /// Different helper functions
+    /// </summary>
     public static class Helpers
     {
+        /// <summary>
+        /// Validate user input if user input is in format of A5
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="row"></param>
+        /// <param name="col"></param>
+        /// <returns></returns>
         public static bool ValidateUserInput(string input, out int row, out int col)
         {
             row = -1;
@@ -48,7 +65,12 @@ namespace BattleShipClasses
 
             return true;
         }
-
+        /// <summary>
+        /// validate/format user input to column index
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="col"></param>
+        /// <returns></returns>
         private static bool ValidateCol(string input, out int col)
         {
             col = -1;
@@ -68,7 +90,12 @@ namespace BattleShipClasses
             }
             return true;
         }
-
+        /// <summary>
+        /// validate/format user input to row index
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="row"></param>
+        /// <returns></returns>
         private static bool ValidateRow(string input, out int row)
         {
             char r1 = input[0].ToString().ToUpper()[0];
@@ -84,7 +111,12 @@ namespace BattleShipClasses
                 return false;
             }
         }
-
+        /// <summary>
+        /// prepare grid for console output
+        /// </summary>
+        /// <param name="grid"></param>
+        /// <param name="showShip"></param>
+        /// <returns></returns>
         public static List<string> PrepareBoard(char[,] grid, bool showShip)
         {
             List<string> result = new List<string>();
